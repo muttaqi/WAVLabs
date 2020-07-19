@@ -1,3 +1,10 @@
 corpus
 highpass_wavs
 lowpass_wavs
+detected_beats
+aubio
+essentia_c
+audio2midi
+aubio
+detected_hats
+detected_kicks
