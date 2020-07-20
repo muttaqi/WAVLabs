@@ -3,7 +3,7 @@ from midiutil import MIDIFile
 
 os.system("aubio onset \"highpass_wavs\\1 19.wav\" -t 0.8 -s -70 -m hfc > tmp")
 result = open('tmp').read()
-#os.remove('tmp')
+os.remove('tmp')
 
 print(result)
 onsets = result.split("\n")

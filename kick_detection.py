@@ -1,7 +1,7 @@
 import os
 from midiutil import MIDIFile
 
-os.system("aubio onset \"lowpass_wavs\\1 19.wav\" -t 0.95 -s -20 -m hfc > tmp")
+os.system("aubio onset \"lowpass_wavs\\1 19.wav\" -t 0.30 -s -70 -m hfc > tmp")
 result = open('tmp').read()
 #os.remove('tmp')
 
