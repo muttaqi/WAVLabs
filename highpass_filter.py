@@ -8,8 +8,8 @@ from scipy import signal
 import numpy as np
 
 def highpass_filter(y, sr):
-    filter_stop_freq = 1500
-    filter_pass_freq = 1500
+    filter_stop_freq = 4000
+    filter_pass_freq = 4000
     filter_order = 1001
 
     arr = np.asarray(y)
