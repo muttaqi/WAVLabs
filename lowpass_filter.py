@@ -6,7 +6,6 @@ output: wav file with only low frequencies
 from scipy.io import wavfile
 import numpy as np
 from scipy.signal import butter,filtfilt
-from plotly import graph_objects as go
 
 # Filter requirements.
 T = 5.0         # Sample Period

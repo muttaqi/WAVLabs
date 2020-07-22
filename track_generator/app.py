@@ -30,7 +30,7 @@ generated_kicks = os.listdir('generated_kicks')[0]
 fsHat.midi_to_audio(generated_hats, 'generated_hats/hats.wav')
 fsKick.midi_to_audio(generated_kicks, 'generated_kicks/kicks.wav')
 
-@app.route('/')
+@app.route('/', methods=['GET'])
 def index():
     return render_template('index.html')
 
