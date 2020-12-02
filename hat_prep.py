@@ -5,5 +5,5 @@ os.system(
 )
 
 os.system(
-    'drums_rnn_create_dataset --config=\'one_drum\' --input=hats.tfrecord --output_dir=hats_sequences --eval_ratio=0.10'
+    'drums_rnn_create_dataset --config=one_drum --input=hats.tfrecord --output_dir=hats_sequences --eval_ratio=0.10'
 )

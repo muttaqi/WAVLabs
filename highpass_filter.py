@@ -6,14 +6,12 @@ output: wav file with only high frequencies
 from scipy.io import wavfile
 from scipy import signal
 import numpy as np
+import os
 
 def highpass_filter(y, sr):
     filter_stop_freq = 4000
     filter_pass_freq = 4000
     filter_order = 1001
-
-    arr = np.asarray(y)
-    print(arr[2000000])
 
     y = np.transpose(y)
 
@@ -24,9 +22,10 @@ def highpass_filter(y, sr):
 
     return signal.filtfilt(filter_coefs, [1], y)
 
-sr, x = wavfile.read('corpus/1 19.wav')
+for filename in os.listdir('./corpus'):
+    sr, x = wavfile.read('corpus/' + filename)
 
-f_x = highpass_filter(x, sr)
+    f_x = highpass_filter(x, sr)
 
-f_x = np.transpose(f_x)
-wavfile.write('highpass_wavs/1 19.wav', sr, f_x.astype(np.int16))
+    f_x = np.transpose(f_x)
+    wavfile.write('highpass_wavs/' + filename, sr, f_x.astype(np.int16))

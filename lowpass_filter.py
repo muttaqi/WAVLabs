@@ -6,6 +6,7 @@ output: wav file with only low frequencies
 from scipy.io import wavfile
 import numpy as np
 from scipy.signal import butter,filtfilt
+import os
 
 # Filter requirements.
 T = 5.0         # Sample Period
@@ -22,17 +23,14 @@ def butter_lowpass_filter(data, cutoff, fs, order):
     y = filtfilt(b, a, data)
     return y
 
-sr, x = wavfile.read('corpus/1 19.wav')
+for filename in os.listdir('./corpus'):
+    sr, x = wavfile.read('corpus/' + filename)
 
-print(x)
-print(len(x))
+    x = x[:, 0]
 
-x = x[:, 0]
+    # Filter the data, and plot both the original and filtered signals.
+    y = butter_lowpass_filter(x, cutoff, fs, order)
 
-# Filter the data, and plot both the original and filtered signals.
-y = butter_lowpass_filter(x, cutoff, fs, order)
+    y = np.asarray(y, dtype=np.int16)
 
-y = np.asarray(y, dtype=np.int16)
-
-print(y)
-wavfile.write('lowpass_wavs/1 19.wav', sr, y)
+    wavfile.write('lowpass_wavs/' + filename, sr, y)
