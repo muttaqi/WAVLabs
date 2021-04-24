@@ -17,6 +17,3 @@ run_pipelines.sh
 
 ## Architecture
 ![WAVLabs Diagram](/images/WAVLabs_Diagram.png)
-
-## Future Plans
-I'm currently working on integrating the pipelines into a synthesizer generator with unique timbres using GANSynth.
