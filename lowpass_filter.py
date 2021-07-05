@@ -8,10 +8,10 @@ import numpy as np
 from scipy.signal import butter,filtfilt
 import os
 
-# Filter requirements.
+# Filter parameters
 T = 5.0         # Sample Period
-fs = 30.0       # sample rate, Hz
-cutoff = 0.3      # desired cutoff frequency of the filter, Hz ,      slightly higher than actual 1.2 Hz
+fs = 30.0       # sample rate in Hz
+cutoff = 0.3    # desired cutoff frequency of the filter in Hz
 nyq = 0.5 * fs  # Nyquist Frequency
 order = 2       # sin wave can be approx represented as quadratic
 n = int(T * fs) # total number of samples
@@ -26,11 +26,13 @@ def butter_lowpass_filter(data, cutoff, fs, order):
 for filename in os.listdir('./corpus'):
     sr, x = wavfile.read('corpus/' + filename)
 
+    # get the first track of the file
     x = x[:, 0]
 
-    # Filter the data, and plot both the original and filtered signals.
+    # filter the data, and plot both the original and filtered signals.
     y = butter_lowpass_filter(x, cutoff, fs, order)
 
     y = np.asarray(y, dtype=np.int16)
 
+    # output to new folder
     wavfile.write('lowpass_wavs/' + filename, sr, y)

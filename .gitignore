@@ -11,3 +11,8 @@ detected_kicks
 aubio
 pyaudio.whl
 track_generator/midijs
+samples
+melodies
+wavenet-ckpt
+kick_log_dir
+hat_log_dir
