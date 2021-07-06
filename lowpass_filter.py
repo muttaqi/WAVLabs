@@ -24,6 +24,8 @@ def butter_lowpass_filter(data, cutoff, fs, order):
     return y
 
 for filename in os.listdir('./corpus'):
+    print("Filtering: " + filename + "...")
+
     sr, x = wavfile.read('corpus/' + filename)
 
     # get the first track of the file

@@ -11,4 +11,5 @@ drums_rnn_train --config=one_drum --run_dir=hat_log_dir/run --sequence_example_f
 cp -r kick_log_dir/run track_generator
 cp -r hat_log_dir/run track_generator
 
-nsynth_generate --checkpoint_path=wavenet-ckpt/model.ckpt-200000 --source_path=samples --save_path=melodies --batch_size=4
+python sample_splice.py
+nsynth_generate --checkpoint_path=wavenet-ckpt/model.ckpt-200000 --source_path=samples --save_path=melodies --batch_size=1

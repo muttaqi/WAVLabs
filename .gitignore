@@ -14,5 +14,7 @@ track_generator/midijs
 samples
 melodies
 wavenet-ckpt
+._wavenet-ckpt
 kick_log_dir
 hat_log_dir
+tmp
