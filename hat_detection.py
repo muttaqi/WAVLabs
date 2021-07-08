@@ -57,6 +57,8 @@ def best_quantize(times, current_set):
     return least_quants
 
 for filename in os.listdir('./highpass_wavs'):
+    print("Analysing: " + filename + "...")
+    
     # get onsets of high-pass audio
     os.system("aubio onset \"highpass_wavs\\" + filename + "\" -t 0.8 -s -70 -m hfc > tmp")
     result = open('tmp').read()

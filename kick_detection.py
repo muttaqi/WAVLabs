@@ -12,6 +12,8 @@ def closest_val(arr, val):
     return arr[idx], idx
 
 for filename in os.listdir('./lowpass_wavs'):
+    print("Analysing: " + filename + "...")
+
     # get onsets of each low-passed wav file
     os.system("aubio onset \"lowpass_wavs\\" + filename + "\" -t 0.30 -s -70 -m hfc > tmp")
     result = open('tmp').read()

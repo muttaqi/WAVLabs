@@ -9,6 +9,8 @@ import numpy as np
 import os
 
 def highpass_filter(y, sr):
+    print("Filtering: " + filename + "...")
+    
     # filter parameters
     filter_stop_freq = 4000
     filter_pass_freq = 4000
